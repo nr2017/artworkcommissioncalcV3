@@ -1,7 +1,8 @@
 // Author: neil robinson
 // Function to calculate total price of artwork
 // Date: 30th May 2021
-// Revision: 24th February 2025
+// Revision: 29th July 2025
+// Version 3.1
 
 // Calculate button
 	window.addEventListener("load", function() {
@@ -36,6 +37,16 @@
 		var commissionTotal = parseFloat(totalProd * commission) / 100;
 		var totalCost = parseFloat(commissionTotal) + parseFloat(totalProd);
 		var rounded = Math.ceil(totalCost/5)*5;
+		
+		
+		/* 
+		Calculation formula: 
+		
+		Add the height + width = size. 
+		Multiply the size x rate. 
+		Then add the production rate (size+rate) + framing costs + transport/postage costs = total production costs. 
+		Multiply the Production cost x commission (%) to get total costs 
+		*/
 		
 		
 		// Output and error handling
@@ -117,8 +128,8 @@
 		//totals
 		totalOutputElem.innerHTML = 
 		"Size of artwork x rate = &pound" + prodRate.toFixed(2) + "<br>" + "<br>"  +
-		"Production costs = &pound" + totalProd.toFixed(2) + "<br>" + "<br>"  +
-		"Total production costs plus gallery commission = &pound" + totalCost.toFixed(2);
+		"Production costs (minus commission) = &pound" + totalProd.toFixed(2) + "<br>" + "<br>"  +
+		"Total costs plus gallery commission (Price of artwork) = &pound" + totalCost.toFixed(2);
 		//total cost multiplied by 2
 		roundedOutputElem.innerHTML = "&pound" + rounded;
 		}

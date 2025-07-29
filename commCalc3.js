@@ -129,9 +129,9 @@
 		totalOutputElem.innerHTML = 
 		"Size of artwork x rate = &pound" + prodRate.toFixed(2) + "<br>" + "<br>"  +
 		"Production costs (minus commission) = &pound" + totalProd.toFixed(2) + "<br>" + "<br>"  +
-		"Total costs plus gallery commission = &pound" + totalCost.toFixed(2);
+		"Total selling cost plus gallery commission = &pound" + totalCost.toFixed(2);
 		//total cost multiplied by 2
-		"Total selling price" + roundedOutputElem.innerHTML = "&pound" + rounded;
+		roundedOutputElem.innerHTML = "&pound" + rounded;
 		}
 }, false);
 	}, false);
